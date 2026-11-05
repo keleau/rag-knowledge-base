@@ -1,0 +1,242 @@
+[
+  {
+    "id": "W1",
+    "type": "single",
+    "question": "智能健康手表 X1 在典型使用场景下的续航是多久？",
+    "answerable": true,
+    "documents": ["智能健康手表产品手册"],
+    "terms": [["7 天", "七天"]]
+  },
+  {
+    "id": "W2",
+    "type": "single",
+    "question": "X1 从 0 充到 100% 需要多长时间？",
+    "answerable": true,
+    "documents": ["智能健康手表产品手册"],
+    "terms": [["90 分钟", "90分钟"]]
+  },
+  {
+    "id": "W3",
+    "type": "single",
+    "question": "X1 支持几 ATM 防水？",
+    "answerable": true,
+    "documents": ["智能健康手表产品手册"],
+    "terms": [["5 ATM", "5ATM"]]
+  },
+  {
+    "id": "W4",
+    "type": "single",
+    "question": "手表整机重量是多少克？",
+    "answerable": true,
+    "documents": ["智能健康手表产品手册"],
+    "terms": [["32 克", "32克", "32g"]]
+  },
+  {
+    "id": "W5",
+    "type": "single",
+    "question": "X1 内置多少种运动模式？",
+    "answerable": true,
+    "documents": ["智能健康手表产品手册"],
+    "terms": [["18 种", "18种"]]
+  },
+  {
+    "id": "W6",
+    "type": "single",
+    "question": "手表质保多久？",
+    "answerable": true,
+    "documents": ["智能健康手表产品手册"],
+    "terms": [["12 个月", "12个月"]]
+  },
+  {
+    "id": "T1",
+    "type": "single",
+    "question": "知问的默认分块大小和重叠长度是多少？",
+    "answerable": true,
+    "documents": ["知问项目技术说明"],
+    "terms": [["500"], ["80"]]
+  },
+  {
+    "id": "T2",
+    "type": "single",
+    "question": "知问使用什么检索方式计算相关性？",
+    "answerable": true,
+    "documents": ["知问项目技术说明"],
+    "terms": [["TF-IDF", "tf-idf"], ["余弦"]]
+  },
+  {
+    "id": "T3",
+    "type": "single",
+    "question": "知问前端用了哪些技术？",
+    "answerable": true,
+    "documents": ["知问项目技术说明"],
+    "terms": [["Vue 3", "Vue3"], ["Vite"]]
+  },
+  {
+    "id": "T4",
+    "type": "single",
+    "question": "知问目前用什么方式存储会话和文档？",
+    "answerable": true,
+    "documents": ["知问项目技术说明"],
+    "terms": [["JSON"]]
+  },
+  {
+    "id": "T5",
+    "type": "single",
+    "question": "生产环境可以用哪些向量库替代？",
+    "answerable": true,
+    "documents": ["知问项目技术说明"],
+    "terms": [["FAISS", "Milvus", "pgvector"]]
+  },
+  {
+    "id": "T6",
+    "type": "single",
+    "question": "知问提供了哪些 MCP 工具？",
+    "answerable": true,
+    "documents": ["知问项目技术说明"],
+    "terms": [["search_knowledge"], ["list_documents"]]
+  },
+  {
+    "id": "M1",
+    "type": "multi",
+    "question": "对比两份文档的主题差异。",
+    "answerable": true,
+    "documents": ["知问项目技术说明", "智能健康手表产品手册"],
+    "terms": [["知问", "RAG", "技术"], ["手表", "X1"]]
+  },
+  {
+    "id": "M2",
+    "type": "multi",
+    "question": "总结智能健康手表的核心功能。",
+    "answerable": true,
+    "documents": ["智能健康手表产品手册"],
+    "terms": [["心率"], ["血氧"], ["睡眠"]]
+  },
+  {
+    "id": "M3",
+    "type": "multi",
+    "question": "总结知问的技术栈。",
+    "answerable": true,
+    "documents": ["知问项目技术说明"],
+    "terms": [["FastAPI"], ["Vue"]]
+  },
+  {
+    "id": "M4",
+    "type": "multi",
+    "question": "手表的典型续航和知问的默认分块大小分别是多少？",
+    "answerable": true,
+    "documents": ["智能健康手表产品手册", "知问项目技术说明"],
+    "terms": [["7 天", "七天"], ["500"]]
+  },
+  {
+    "id": "M5",
+    "type": "multi",
+    "question": "哪个文档讲软件系统，哪个文档讲硬件产品？",
+    "answerable": true,
+    "documents": ["知问项目技术说明", "智能健康手表产品手册"],
+    "terms": [["知问", "软件", "RAG"], ["手表", "硬件", "X1"]]
+  },
+  {
+    "id": "M6",
+    "type": "multi",
+    "question": "这两份文档分别适合哪些人或团队使用？",
+    "answerable": true,
+    "documents": ["智能健康手表产品手册", "知问项目技术说明"],
+    "terms": [["上班族", "学生"], ["个人", "小团队"]]
+  },
+  {
+    "id": "M7",
+    "type": "multi",
+    "question": "对比手表的防水限制和知问检索的局限。",
+    "answerable": true,
+    "documents": ["智能健康手表产品手册", "知问项目技术说明"],
+    "terms": [["桑拿", "热水浴", "深潜"], ["同义", "跨语言", "TF-IDF", "embedding"]]
+  },
+  {
+    "id": "M8",
+    "type": "multi",
+    "question": "知问文档中的检索演进方向是什么？",
+    "answerable": true,
+    "documents": ["知问项目技术说明"],
+    "terms": [["embedding", "bge-m3", "text-embedding"], ["FAISS", "Milvus", "pgvector"]]
+  },
+  {
+    "id": "U1",
+    "type": "unanswerable",
+    "question": "手表支持太阳能充电吗？",
+    "answerable": false,
+    "documents": [],
+    "terms": []
+  },
+  {
+    "id": "U2",
+    "type": "unanswerable",
+    "question": "这块手表能测血压吗？",
+    "answerable": false,
+    "documents": [],
+    "terms": []
+  },
+  {
+    "id": "U3",
+    "type": "unanswerable",
+    "question": "手表的 Wi-Fi 连接怎么设置？",
+    "answerable": false,
+    "documents": [],
+    "terms": []
+  },
+  {
+    "id": "U4",
+    "type": "unanswerable",
+    "question": "手表可以卫星通话吗？",
+    "answerable": false,
+    "documents": [],
+    "terms": []
+  },
+  {
+    "id": "U5",
+    "type": "unanswerable",
+    "question": "X1 用的处理器型号是什么？",
+    "answerable": false,
+    "documents": [],
+    "terms": []
+  },
+  {
+    "id": "U6",
+    "type": "unanswerable",
+    "question": "X1 屏幕的刷新率是多少？",
+    "answerable": false,
+    "documents": [],
+    "terms": []
+  },
+  {
+    "id": "U7",
+    "type": "unanswerable",
+    "question": "知问的代码一共有多少行？",
+    "answerable": false,
+    "documents": [],
+    "terms": []
+  },
+  {
+    "id": "U8",
+    "type": "unanswerable",
+    "question": "知问 MCP 服务的默认端口是多少？",
+    "answerable": false,
+    "documents": [],
+    "terms": []
+  },
+  {
+    "id": "U9",
+    "type": "unanswerable",
+    "question": "知问支持图片 OCR 识别吗？",
+    "answerable": false,
+    "documents": [],
+    "terms": []
+  },
+  {
+    "id": "U10",
+    "type": "unanswerable",
+    "question": "知问后台最多支持多少并发任务？",
+    "answerable": false,
+    "documents": [],
+    "terms": []
+  }
+]

@@ -1,0 +1,1356 @@
+{
+  "generated_at": "2026-11-01T01:09:00",
+  "mode": "demo",
+  "config": {
+    "top_k": 4,
+    "agent_max_steps": 4,
+    "evidence_threshold": 0.75,
+    "documents": {
+      "documents": 2,
+      "chunks": 7,
+      "characters": 2362
+    }
+  },
+  "summary": {
+    "single_rag": {
+      "label": "single-rag",
+      "answerable_count": 20,
+      "unanswerable_count": 10,
+      "answer_term_coverage": 0.975,
+      "full_answer_rate": 0.95,
+      "evidence_coverage": 0.975,
+      "document_recall": 0.975,
+      "refusal_rate_unanswerable": 0.0,
+      "false_refusal_rate": 0.0,
+      "citation_invalid_rate": 0.0,
+      "citation_coverage": 1.0,
+      "avg_steps": 1.0,
+      "avg_tool_steps": 1.0,
+      "avg_latency_ms": 26.3
+    },
+    "agent_loop": {
+      "label": "agent-loop",
+      "answerable_count": 20,
+      "unanswerable_count": 10,
+      "answer_term_coverage": 1.0,
+      "full_answer_rate": 1.0,
+      "evidence_coverage": 1.0,
+      "document_recall": 1.0,
+      "refusal_rate_unanswerable": 1.0,
+      "false_refusal_rate": 0.0,
+      "citation_invalid_rate": 0.0,
+      "citation_coverage": 1.0,
+      "avg_steps": 3.6,
+      "avg_tool_steps": 1.6,
+      "avg_latency_ms": 649.5
+    }
+  },
+  "tasks": [
+    {
+      "baseline": {
+        "id": "W1",
+        "type": "single",
+        "question": "智能健康手表 X1 在典型使用场景下的续航是多久？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n在典型使用场景下，X1 的续航约为 7 天； [2]\n\n在典型使用场景下，X1 [1]\n\n智能健康手表 X1 是一款面向日常健康管理的轻量级可穿戴设备。 [1]\n\n开启常亮显示与全天血氧监测后，续航约为 4 天。 [2]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 559,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "W1",
+        "type": "single",
+        "question": "智能健康手表 X1 在典型使用场景下的续航是多久？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n在典型使用场景下，X1 的续航约为 7 天； [2]\n\n在典型使用场景下，X1 [1]\n\n智能健康手表 X1 是一款面向日常健康管理的轻量级可穿戴设备。 [1]\n\n开启常亮显示与全天血氧监测后，续航约为 4 天。 [2]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 671,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "W2",
+        "type": "single",
+        "question": "X1 从 0 充到 100% 需要多长时间？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n磁吸充电底座可在 90 分钟内将电量从 0 充至 100%。 [1]\n\nX1 适合关注睡眠质量、久坐提醒和日常运动的上班族、学生与轻度运动爱好者。 [1]\n\n智能健康手表 X1 是一款面向日常健康管理的轻量级可穿戴设备。 [2]\n\n在典型使用场景下，X1 的续航约为 7 天； [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 2 分块\n[2] 《智能健康手表产品手册.docx》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 4,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "W2",
+        "type": "single",
+        "question": "X1 从 0 充到 100% 需要多长时间？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n磁吸充电底座可在 90 分钟内将电量从 0 充至 100%。 [1]\n\nX1 适合关注睡眠质量、久坐提醒和日常运动的上班族、学生与轻度运动爱好者。 [1]\n\n智能健康手表 X1 是一款面向日常健康管理的轻量级可穿戴设备。 [2]\n\n在典型使用场景下，X1 的续航约为 7 天； [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 2 分块\n[2] 《智能健康手表产品手册.docx》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 730,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "W3",
+        "type": "single",
+        "question": "X1 支持几 ATM 防水？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [1]\n\nX1 适合关注睡眠质量、久坐提醒和日常运动的上班族、学生与轻度运动爱好者。 [1]\n\n智能健康手表 X1 是一款面向日常健康管理的轻量级可穿戴设备。 [2]\n\n在典型使用场景下，X1 的续航约为 7 天； [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 2 分块\n[2] 《智能健康手表产品手册.docx》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 5,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "W3",
+        "type": "single",
+        "question": "X1 支持几 ATM 防水？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [1]\n\nX1 适合关注睡眠质量、久坐提醒和日常运动的上班族、学生与轻度运动爱好者。 [1]\n\n智能健康手表 X1 是一款面向日常健康管理的轻量级可穿戴设备。 [2]\n\n在典型使用场景下，X1 的续航约为 7 天； [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 2 分块\n[2] 《智能健康手表产品手册.docx》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 755,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "W4",
+        "type": "single",
+        "question": "手表整机重量是多少克？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n手表整机重量约 32 克，提供曜石黑、雾银灰和苔藓绿三种配色，表带采用亲肤硅胶材质，支持快速拆卸。 [1]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [2]\n\n手表主机 × 1、磁吸充电线 × 1、快速入门指南 × 1、保修卡 × 1。 [2]\n\nNFC 门禁：可模拟小区与公司门禁卡，卡片信息仅保存在手表本地安全芯片中。 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 3,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 4,
+        "refused": false,
+        "citations": 7,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "W4",
+        "type": "single",
+        "question": "手表整机重量是多少克？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n手表整机重量约 32 克，提供曜石黑、雾银灰和苔藓绿三种配色，表带采用亲肤硅胶材质，支持快速拆卸。 [1]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [2]\n\n手表主机 × 1、磁吸充电线 × 1、快速入门指南 × 1、保修卡 × 1。 [2]\n\nNFC 门禁：可模拟小区与公司门禁卡，卡片信息仅保存在手表本地安全芯片中。 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 3,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 871,
+        "refused": false,
+        "citations": 7,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "W5",
+        "type": "single",
+        "question": "X1 内置多少种运动模式？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n运动记录：内置跑步、步行、骑行、游泳、跳绳等 18 种运动模式，支持 GPS 轨迹记录。 [1]\n\nX1 适合关注睡眠质量、久坐提醒和日常运动的上班族、学生与轻度运动爱好者。 [2]\n\n它将心率、血氧、睡眠与运动数据整合到一块 1.43 英寸 AMOLED 屏幕上，并通过蓝牙与手机 App 同步。 [1]\n\n智能健康手表 X1 是一款面向日常健康管理的轻量级可穿戴设备。 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 3,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "W5",
+        "type": "single",
+        "question": "X1 内置多少种运动模式？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n运动记录：内置跑步、步行、骑行、游泳、跳绳等 18 种运动模式，支持 GPS 轨迹记录。 [1]\n\nX1 适合关注睡眠质量、久坐提醒和日常运动的上班族、学生与轻度运动爱好者。 [2]\n\n它将心率、血氧、睡眠与运动数据整合到一块 1.43 英寸 AMOLED 屏幕上，并通过蓝牙与手机 App 同步。 [1]\n\n智能健康手表 X1 是一款面向日常健康管理的轻量级可穿戴设备。 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 820,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "W6",
+        "type": "single",
+        "question": "手表质保多久？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n官方提供 12 个月质保，表带等易耗件不在质保范围内。 [1]\n\n手表整机重量约 32 克，提供曜石黑、雾银灰和苔藓绿三种配色，表带采用亲肤硅胶材质，支持快速拆卸。 [3]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [2]\n\n手表主机 × 1、磁吸充电线 × 1、快速入门指南 × 1、保修卡 × 1。 [2]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 3 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n[3] 《智能健康手表产品手册.docx》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 3,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 5,
+        "refused": false,
+        "citations": 7,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "W6",
+        "type": "single",
+        "question": "手表质保多久？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n官方提供 12 个月质保，表带等易耗件不在质保范围内。 [1]\n\n手表整机重量约 32 克，提供曜石黑、雾银灰和苔藓绿三种配色，表带采用亲肤硅胶材质，支持快速拆卸。 [3]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [2]\n\n手表主机 × 1、磁吸充电线 × 1、快速入门指南 × 1、保修卡 × 1。 [2]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 3 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n[3] 《智能健康手表产品手册.docx》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 3,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 851,
+        "refused": false,
+        "citations": 7,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "T1",
+        "type": "single",
+        "question": "知问的默认分块大小和重叠长度是多少？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n2. 重叠分块：默认每块 500 字，相邻块重叠 80 字，避免上下文在边界处断裂。 [1]\n\n用户上传 TXT、Markdown、Word 或 PDF 文档后，系统会在本地完成文本解析、重叠分块与 TF-IDF 向量化； [2]\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [2]\n\n4. 相似度检索：将用户问题向量化，用余弦相似度排序，默认取前 4 个分块。 [1]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 2 分块\n[2] 《知问项目技术说明.md》 · 第 1 分块\n[3] 《智能健康手表产品手册.docx》 · 第 2 分块\n[4] 《智能健康手表产品手册.docx》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 11,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "T1",
+        "type": "single",
+        "question": "知问的默认分块大小和重叠长度是多少？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n2. 重叠分块：默认每块 500 字，相邻块重叠 80 字，避免上下文在边界处断裂。 [1]\n\n用户上传 TXT、Markdown、Word 或 PDF 文档后，系统会在本地完成文本解析、重叠分块与 TF-IDF 向量化； [2]\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [2]\n\n4. 相似度检索：将用户问题向量化，用余弦相似度排序，默认取前 4 个分块。 [1]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 2 分块\n[2] 《知问项目技术说明.md》 · 第 1 分块\n[3] 《智能健康手表产品手册.docx》 · 第 2 分块\n[4] 《智能健康手表产品手册.docx》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 944,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "T2",
+        "type": "single",
+        "question": "知问使用什么检索方式计算相关性？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [2]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [2]\n\n当前检索使用 TF-IDF，属于词面匹配，优点是零额外模型成本、可解释、启动快； [3]\n\n- 检索：jieba 中文分词、scikit-learn TfidfVectorizer、余弦相似度。 [2]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 4 分块\n[2] 《知问项目技术说明.md》 · 第 1 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 9,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "T2",
+        "type": "single",
+        "question": "知问使用什么检索方式计算相关性？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [2]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [2]\n\n当前检索使用 TF-IDF，属于词面匹配，优点是零额外模型成本、可解释、启动快； [3]\n\n- 检索：jieba 中文分词、scikit-learn TfidfVectorizer、余弦相似度。 [2]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 4 分块\n[2] 《知问项目技术说明.md》 · 第 1 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 928,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "T3",
+        "type": "single",
+        "question": "知问前端用了哪些技术？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [1]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [1]\n\n6. 流式回答：后端解析 DeepSeek 的 SSE 数据，向前端转发 sources、delta、done 事件。 [2]\n\n- 前端：Vue 3、TypeScript、Vite、marked、DOMPurify。 [1]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 7,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "T3",
+        "type": "single",
+        "question": "知问前端用了哪些技术？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [1]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [1]\n\n6. 流式回答：后端解析 DeepSeek 的 SSE 数据，向前端转发 sources、delta、done 事件。 [2]\n\n- 前端：Vue 3、TypeScript、Vite、marked、DOMPurify。 [1]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 846,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "T4",
+        "type": "single",
+        "question": "知问目前用什么方式存储会话和文档？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [1]\n\n- 存储：JSON 文件，包含会话、消息、文档元数据与分块； [1]\n\n生产环境可以把向量化替换为 bge-m3、text-embedding-3-small 等 embedding 模型，并使用 FAISS、Milvus 或 pgvector 存储向量； [4]\n\n3-small 等 embedding 模型，并使用 FAISS、Milvus 或 pgvector 存储向量； [3]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 4 分块\n[4] 《知问项目技术说明.md》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 9,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "T4",
+        "type": "single",
+        "question": "知问目前用什么方式存储会话和文档？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [1]\n\n- 存储：JSON 文件，包含会话、消息、文档元数据与分块； [1]\n\n生产环境可以把向量化替换为 bge-m3、text-embedding-3-small 等 embedding 模型，并使用 FAISS、Milvus 或 pgvector 存储向量； [4]\n\n3-small 等 embedding 模型，并使用 FAISS、Milvus 或 pgvector 存储向量； [3]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 4 分块\n[4] 《知问项目技术说明.md》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 976,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "T5",
+        "type": "single",
+        "question": "生产环境可以用哪些向量库替代？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n生产环境可以把向量化替换为 bge-m3、text-embedding-3-small 等 embedding 模型，并使用 FAISS、Milvus 或 pgvector 存储向量； [1]\n\n它可以帮助用户建立健康习惯，但不能替代专业医疗设备。 [2]\n\n3-small 等 embedding 模型，并使用 FAISS、Milvus 或 pgvector 存储向量； [3]\n\n3. 向量化：使用 jieba 分词后构建 TF-IDF 矩阵，文档更新时自动重建索引。 [4]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 3 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 4 分块\n[4] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 8,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "T5",
+        "type": "single",
+        "question": "生产环境可以用哪些向量库替代？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n生产环境可以把向量化替换为 bge-m3、text-embedding-3-small 等 embedding 模型，并使用 FAISS、Milvus 或 pgvector 存储向量； [1]\n\n它可以帮助用户建立健康习惯，但不能替代专业医疗设备。 [2]\n\n3-small 等 embedding 模型，并使用 FAISS、Milvus 或 pgvector 存储向量； [3]\n\n3. 向量化：使用 jieba 分词后构建 TF-IDF 矩阵，文档更新时自动重建索引。 [4]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 3 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 4 分块\n[4] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 1028,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "T6",
+        "type": "single",
+        "question": "知问提供了哪些 MCP 工具？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n- MCP 工具：search_knowledge、list_documents、get_document_chunks。 [1]\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [3]\n\nMCP 服务当前以 stdio 方式运行，便于在本地接入 Claude、Qoder 等支持 MCP 的客户端。 [2]\n\n官方提供 12 个月质保，表带等易耗件不在质保范围内。 [4]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 3 分块\n[2] 《知问项目技术说明.md》 · 第 4 分块\n[3] 《知问项目技术说明.md》 · 第 1 分块\n[4] 《智能健康手表产品手册.docx》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 15,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "T6",
+        "type": "single",
+        "question": "知问提供了哪些 MCP 工具？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n- MCP 工具：search_knowledge、list_documents、get_document_chunks。 [1]\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [3]\n\nMCP 服务当前以 stdio 方式运行，便于在本地接入 Claude、Qoder 等支持 MCP 的客户端。 [2]\n\n官方提供 12 个月质保，表带等易耗件不在质保范围内。 [4]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 3 分块\n[2] 《知问项目技术说明.md》 · 第 4 分块\n[3] 《知问项目技术说明.md》 · 第 1 分块\n[4] 《智能健康手表产品手册.docx》 · 第 3 分块\n[5] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 5,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 5,
+        "tool_steps": 3,
+        "latency_ms": 981,
+        "refused": false,
+        "citations": 9,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "M1",
+        "type": "multi",
+        "question": "对比两份文档的主题差异。",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n用户上传 TXT、Markdown、Word 或 PDF 文档后，系统会在本地完成文本解析、重叠分块与 TF-IDF 向量化； [1]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [1]\n\n3. 向量化：使用 jieba 分词后构建 TF-IDF 矩阵，文档更新时自动重建索引。 [2]\n\n7. 引用留存：回答与来源分块一起写入会话，前端可以展开查看原文并跳转到文档分块。 [2]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 4 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 8,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 0.5,
+        "full_answer": false,
+        "evidence_coverage": 0.5,
+        "document_recall": 0.5
+      },
+      "agent": {
+        "id": "M1",
+        "type": "multi",
+        "question": "对比两份文档的主题差异。",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n用户上传 TXT、Markdown、Word 或 PDF 文档后，系统会在本地完成文本解析、重叠分块与 TF-IDF 向量化； [1]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [1]\n\n它将心率、血氧、睡眠与运动数据整合到一块 1.43 英寸 AMOLED 屏幕上，并通过蓝牙与手机 App 同步。 [5]\n\n手表整机重量约 32 克，提供曜石黑、雾银灰和苔藓绿三种配色，表带采用亲肤硅胶材质，支持快速拆卸。 [5]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 4 分块\n[5] 《智能健康手表产品手册.docx》 · 第 1 分块\n[6] 《智能健康手表产品手册.docx》 · 第 2 分块\n[7] 《智能健康手表产品手册.docx》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 7,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 5,
+        "tool_steps": 3,
+        "latency_ms": 1224,
+        "refused": false,
+        "citations": 11,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "M2",
+        "type": "multi",
+        "question": "总结智能健康手表的核心功能。",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n心率与血氧监测：采用 PPG 光学传感器，支持全天候自动监测，也可在 App 中发起单次测量。 [1]\n\n睡眠分析：记录入睡时间、深睡、浅睡、快速眼动与夜间醒来次数，并生成每周睡眠趋势。 [1]\n\n运动记录：内置跑步、步行、骑行、游泳、跳绳等 18 种运动模式，支持 GPS 轨迹记录。 [1]\n\n久坐提醒：连续静坐 60 分钟后，手表通过轻震提醒用户起身活动。 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 7,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "M2",
+        "type": "multi",
+        "question": "总结智能健康手表的核心功能。",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n心率与血氧监测：采用 PPG 光学传感器，支持全天候自动监测，也可在 App 中发起单次测量。 [1]\n\n睡眠分析：记录入睡时间、深睡、浅睡、快速眼动与夜间醒来次数，并生成每周睡眠趋势。 [1]\n\n运动记录：内置跑步、步行、骑行、游泳、跳绳等 18 种运动模式，支持 GPS 轨迹记录。 [1]\n\n久坐提醒：连续静坐 60 分钟后，手表通过轻震提醒用户起身活动。 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n[3] 《智能健康手表产品手册.docx》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 3,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 4,
+        "tool_steps": 2,
+        "latency_ms": 879,
+        "refused": false,
+        "citations": 7,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "M3",
+        "type": "multi",
+        "question": "总结知问的技术栈。",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n- 后端：Python 3.11+、FastAPI、Uvicorn、httpx。 [1]\n\n- 前端：Vue 3、TypeScript、Vite、marked、DOMPurify。 [1]\n\n- 检索：jieba 中文分词、scikit-learn TfidfVectorizer、余弦相似度。 [1]\n\n- 大模型：DeepSeek OpenAI 兼容接口，支持流式输出； [1]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 1,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 2,
+        "refused": false,
+        "citations": 5,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "M3",
+        "type": "multi",
+        "question": "总结知问的技术栈。",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n- 后端：Python 3.11+、FastAPI、Uvicorn、httpx。 [1]\n\n- 前端：Vue 3、TypeScript、Vite、marked、DOMPurify。 [1]\n\n- 检索：jieba 中文分词、scikit-learn TfidfVectorizer、余弦相似度。 [1]\n\n- 大模型：DeepSeek OpenAI 兼容接口，支持流式输出； [1]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 4 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 4,
+        "tool_steps": 2,
+        "latency_ms": 915,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "M4",
+        "type": "multi",
+        "question": "手表的典型续航和知问的默认分块大小分别是多少？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n在典型使用场景下，X1 的续航约为 7 天； [1]\n\n开启常亮显示与全天血氧监测后，续航约为 4 天。 [1]\n\n2. 重叠分块：默认每块 500 字，相邻块重叠 80 字，避免上下文在边界处断裂。 [4]\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [2]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 2 分块\n[2] 《知问项目技术说明.md》 · 第 1 分块\n[3] 《智能健康手表产品手册.docx》 · 第 1 分块\n[4] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 10,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "M4",
+        "type": "multi",
+        "question": "手表的典型续航和知问的默认分块大小分别是多少？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n2. 重叠分块：默认每块 500 字，相邻块重叠 80 字，避免上下文在边界处断裂。 [2]\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [1]\n\n在典型使用场景下，X1 的续航约为 7 天； [6]\n\n开启常亮显示与全天血氧监测后，续航约为 4 天。 [6]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 4 分块\n[5] 《智能健康手表产品手册.docx》 · 第 1 分块\n[6] 《智能健康手表产品手册.docx》 · 第 2 分块\n[7] 《智能健康手表产品手册.docx》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 7,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 5,
+        "tool_steps": 3,
+        "latency_ms": 1004,
+        "refused": false,
+        "citations": 11,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "M5",
+        "type": "multi",
+        "question": "哪个文档讲软件系统，哪个文档讲硬件产品？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n产品定位是“全天候的健康提醒助手”，而不是专业医疗诊断设备。 [2]\n\n用户上传 TXT、Markdown、Word 或 PDF 文档后，系统会在本地完成文本解析、重叠分块与 TF-IDF 向量化； [1]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [1]\n\n3. 向量化：使用 jieba 分词后构建 TF-IDF 矩阵，文档更新时自动重建索引。 [3]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 1 分块\n[3] 《知问项目技术说明.md》 · 第 2 分块\n[4] 《知问项目技术说明.md》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 8,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "M5",
+        "type": "multi",
+        "question": "哪个文档讲软件系统，哪个文档讲硬件产品？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n产品定位是“全天候的健康提醒助手”，而不是专业医疗诊断设备。 [5]\n\n用户上传 TXT、Markdown、Word 或 PDF 文档后，系统会在本地完成文本解析、重叠分块与 TF-IDF 向量化； [1]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [1]\n\n3. 向量化：使用 jieba 分词后构建 TF-IDF 矩阵，文档更新时自动重建索引。 [2]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 4 分块\n[5] 《智能健康手表产品手册.docx》 · 第 1 分块\n[6] 《智能健康手表产品手册.docx》 · 第 2 分块\n[7] 《智能健康手表产品手册.docx》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 7,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 5,
+        "tool_steps": 3,
+        "latency_ms": 1162,
+        "refused": false,
+        "citations": 11,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "M6",
+        "type": "multi",
+        "question": "这两份文档分别适合哪些人或团队使用？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [2]\n\n当前存储使用单进程 JSON 文件，适合个人使用与课程项目。 [1]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [3]\n\nX1 适合关注睡眠质量、久坐提醒和日常运动的上班族、学生与轻度运动爱好者。 [3]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 4 分块\n[2] 《知问项目技术说明.md》 · 第 1 分块\n[3] 《智能健康手表产品手册.docx》 · 第 2 分块\n[4] 《知问项目技术说明.md》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 11,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "M6",
+        "type": "multi",
+        "question": "这两份文档分别适合哪些人或团队使用？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [1]\n\n当前存储使用单进程 JSON 文件，适合个人使用与课程项目。 [4]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [6]\n\nX1 适合关注睡眠质量、久坐提醒和日常运动的上班族、学生与轻度运动爱好者。 [6]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 4 分块\n[5] 《智能健康手表产品手册.docx》 · 第 1 分块\n[6] 《智能健康手表产品手册.docx》 · 第 2 分块\n[7] 《智能健康手表产品手册.docx》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 7,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 5,
+        "tool_steps": 3,
+        "latency_ms": 1033,
+        "refused": false,
+        "citations": 11,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "M7",
+        "type": "multi",
+        "question": "对比手表的防水限制和知问检索的局限。",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [1]\n\n它可以帮助用户建立健康习惯，但不能替代专业医疗设备。 [1]\n\n缺点是难以理解同义改写与跨语言语义。 [4]\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [2]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 2 分块\n[2] 《知问项目技术说明.md》 · 第 1 分块\n[3] 《智能健康手表产品手册.docx》 · 第 1 分块\n[4] 《知问项目技术说明.md》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 8,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "M7",
+        "type": "multi",
+        "question": "对比手表的防水限制和知问检索的局限。",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n缺点是难以理解同义改写与跨语言语义。 [3]\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [1]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [6]\n\n它可以帮助用户建立健康习惯，但不能替代专业医疗设备。 [6]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 4 分块\n[5] 《智能健康手表产品手册.docx》 · 第 1 分块\n[6] 《智能健康手表产品手册.docx》 · 第 2 分块\n[7] 《智能健康手表产品手册.docx》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 7,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 5,
+        "tool_steps": 3,
+        "latency_ms": 990,
+        "refused": false,
+        "citations": 11,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "M8",
+        "type": "multi",
+        "question": "知问文档中的检索演进方向是什么？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [2]\n\n生产环境可以把向量化替换为 bge-m3、text-embedding-3-small 等 embedding 模型，并使用 FAISS、Milvus 或 pgvector 存储向量； [1]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [2]\n\n- 检索：jieba 中文分词、scikit-learn TfidfVectorizer、余弦相似度。 [2]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 3 分块\n[2] 《知问项目技术说明.md》 · 第 1 分块\n[3] 《智能健康手表产品手册.docx》 · 第 1 分块\n[4] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 12,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      },
+      "agent": {
+        "id": "M8",
+        "type": "multi",
+        "question": "知问文档中的检索演进方向是什么？",
+        "answerable": true,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [2]\n\n生产环境可以把向量化替换为 bge-m3、text-embedding-3-small 等 embedding 模型，并使用 FAISS、Milvus 或 pgvector 存储向量； [1]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [2]\n\n- 检索：jieba 中文分词、scikit-learn TfidfVectorizer、余弦相似度。 [2]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 3 分块\n[2] 《知问项目技术说明.md》 · 第 1 分块\n[3] 《智能健康手表产品手册.docx》 · 第 1 分块\n[4] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 1053,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true,
+        "answer_term_coverage": 1.0,
+        "full_answer": true,
+        "evidence_coverage": 1.0,
+        "document_recall": 1.0
+      }
+    },
+    {
+      "baseline": {
+        "id": "U1",
+        "type": "unanswerable",
+        "question": "手表支持太阳能充电吗？",
+        "answerable": false,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n手表主机 × 1、磁吸充电线 × 1、快速入门指南 × 1、保修卡 × 1。 [1]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [1]\n\n磁吸充电底座可在 90 分钟内将电量从 0 充至 100%。 [1]\n\n磁吸充电线 × 1、快速入门指南 × 1、保修卡 × 1。 [3]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 2 分块\n[2] 《智能健康手表产品手册.docx》 · 第 1 分块\n[3] 《智能健康手表产品手册.docx》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 4 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 8,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true
+      },
+      "agent": {
+        "id": "U1",
+        "type": "unanswerable",
+        "question": "手表支持太阳能充电吗？",
+        "answerable": false,
+        "answer": "知识库中未找到与这个问题相关的依据，因此不做推测性回答。可以换一种问法，或补充上传相关资料后再试。",
+        "source_count": 0,
+        "source_documents": [],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 85,
+        "refused": true,
+        "citations": 0,
+        "invalid_citations": 0,
+        "has_citation": false
+      }
+    },
+    {
+      "baseline": {
+        "id": "U2",
+        "type": "unanswerable",
+        "question": "这块手表能测血压吗？",
+        "answerable": false,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n手表整机重量约 32 克，提供曜石黑、雾银灰和苔藓绿三种配色，表带采用亲肤硅胶材质，支持快速拆卸。 [1]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [2]\n\n手表主机 × 1、磁吸充电线 × 1、快速入门指南 × 1、保修卡 × 1。 [2]\n\nNFC 门禁：可模拟小区与公司门禁卡，卡片信息仅保存在手表本地安全芯片中。 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "智能健康手表产品手册.docx"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 7,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true
+      },
+      "agent": {
+        "id": "U2",
+        "type": "unanswerable",
+        "question": "这块手表能测血压吗？",
+        "answerable": false,
+        "answer": "知识库中未找到与这个问题相关的依据，因此不做推测性回答。可以换一种问法，或补充上传相关资料后再试。",
+        "source_count": 0,
+        "source_documents": [],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 86,
+        "refused": true,
+        "citations": 0,
+        "invalid_citations": 0,
+        "has_citation": false
+      }
+    },
+    {
+      "baseline": {
+        "id": "U3",
+        "type": "unanswerable",
+        "question": "手表的 Wi-Fi 连接怎么设置？",
+        "answerable": false,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n手表整机重量约 32 克，提供曜石黑、雾银灰和苔藓绿三种配色，表带采用亲肤硅胶材质，支持快速拆卸。 [1]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [2]\n\n手表主机 × 1、磁吸充电线 × 1、快速入门指南 × 1、保修卡 × 1。 [2]\n\nNFC 门禁：可模拟小区与公司门禁卡，卡片信息仅保存在手表本地安全芯片中。 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 1 分块\n[4] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 9,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true
+      },
+      "agent": {
+        "id": "U3",
+        "type": "unanswerable",
+        "question": "手表的 Wi-Fi 连接怎么设置？",
+        "answerable": false,
+        "answer": "知识库中未找到与这个问题相关的依据，因此不做推测性回答。可以换一种问法，或补充上传相关资料后再试。",
+        "source_count": 0,
+        "source_documents": [],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 83,
+        "refused": true,
+        "citations": 0,
+        "invalid_citations": 0,
+        "has_citation": false
+      }
+    },
+    {
+      "baseline": {
+        "id": "U4",
+        "type": "unanswerable",
+        "question": "手表可以卫星通话吗？",
+        "answerable": false,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n手表整机重量约 32 克，提供曜石黑、雾银灰和苔藓绿三种配色，表带采用亲肤硅胶材质，支持快速拆卸。 [2]\n\n手表支持 5 ATM 防水，可在游泳和淋浴时佩戴，但不适合热水浴、桑拿或深潜。 [1]\n\n手表主机 × 1、磁吸充电线 × 1、快速入门指南 × 1、保修卡 × 1。 [1]\n\nNFC 门禁：可模拟小区与公司门禁卡，卡片信息仅保存在手表本地安全芯片中。 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 2 分块\n[2] 《智能健康手表产品手册.docx》 · 第 1 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 4 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 9,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true
+      },
+      "agent": {
+        "id": "U4",
+        "type": "unanswerable",
+        "question": "手表可以卫星通话吗？",
+        "answerable": false,
+        "answer": "知识库中未找到与这个问题相关的依据，因此不做推测性回答。可以换一种问法，或补充上传相关资料后再试。",
+        "source_count": 0,
+        "source_documents": [],
+        "steps": 5,
+        "tool_steps": 3,
+        "latency_ms": 83,
+        "refused": true,
+        "citations": 0,
+        "invalid_citations": 0,
+        "has_citation": false
+      }
+    },
+    {
+      "baseline": {
+        "id": "U5",
+        "type": "unanswerable",
+        "question": "X1 用的处理器型号是什么？",
+        "answerable": false,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\nX1 适合关注睡眠质量、久坐提醒和日常运动的上班族、学生与轻度运动爱好者。 [2]\n\n智能健康手表 X1 是一款面向日常健康管理的轻量级可穿戴设备。 [1]\n\n在典型使用场景下，X1 的续航约为 7 天； [2]\n\n在典型使用场景下，X1 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 2 分块\n[4] 《知问项目技术说明.md》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 11,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true
+      },
+      "agent": {
+        "id": "U5",
+        "type": "unanswerable",
+        "question": "X1 用的处理器型号是什么？",
+        "answerable": false,
+        "answer": "知识库中未找到与这个问题相关的依据，因此不做推测性回答。可以换一种问法，或补充上传相关资料后再试。",
+        "source_count": 0,
+        "source_documents": [],
+        "steps": 5,
+        "tool_steps": 3,
+        "latency_ms": 79,
+        "refused": true,
+        "citations": 0,
+        "invalid_citations": 0,
+        "has_citation": false
+      }
+    },
+    {
+      "baseline": {
+        "id": "U6",
+        "type": "unanswerable",
+        "question": "X1 屏幕的刷新率是多少？",
+        "answerable": false,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n它将心率、血氧、睡眠与运动数据整合到一块 1.43 英寸 AMOLED 屏幕上，并通过蓝牙与手机 App 同步。 [1]\n\n屏幕分辨率为 466 × 466，支持常亮显示与抬腕亮屏。 [1]\n\nX1 适合关注睡眠质量、久坐提醒和日常运动的上班族、学生与轻度运动爱好者。 [2]\n\n智能健康手表 X1 是一款面向日常健康管理的轻量级可穿戴设备。 [1]\n\n**参考资料**\n\n[1] 《智能健康手表产品手册.docx》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 2 分块\n[3] 《知问项目技术说明.md》 · 第 1 分块\n[4] 《知问项目技术说明.md》 · 第 3 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 9,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true
+      },
+      "agent": {
+        "id": "U6",
+        "type": "unanswerable",
+        "question": "X1 屏幕的刷新率是多少？",
+        "answerable": false,
+        "answer": "知识库中未找到与这个问题相关的依据，因此不做推测性回答。可以换一种问法，或补充上传相关资料后再试。",
+        "source_count": 0,
+        "source_documents": [],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 82,
+        "refused": true,
+        "citations": 0,
+        "invalid_citations": 0,
+        "has_citation": false
+      }
+    },
+    {
+      "baseline": {
+        "id": "U7",
+        "type": "unanswerable",
+        "question": "知问的代码一共有多少行？",
+        "answerable": false,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [1]\n\n用户上传 TXT、Markdown、Word 或 PDF 文档后，系统会在本地完成文本解析、重叠分块与 TF-IDF 向量化； [1]\n\n提问时先检索最相关的文档片段，再把片段与问题一起交给 DeepSeek 生成回答，并通过 SSE 将回答逐字推送到前端。 [1]\n\n6. 流式回答：后端解析 DeepSeek 的 SSE 数据，向前端转发 sources、delta、done 事件。 [2]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 2,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 6,
+        "refused": false,
+        "citations": 6,
+        "invalid_citations": 0,
+        "has_citation": true
+      },
+      "agent": {
+        "id": "U7",
+        "type": "unanswerable",
+        "question": "知问的代码一共有多少行？",
+        "answerable": false,
+        "answer": "知识库中未找到与这个问题相关的依据，因此不做推测性回答。可以换一种问法，或补充上传相关资料后再试。",
+        "source_count": 0,
+        "source_documents": [],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 84,
+        "refused": true,
+        "citations": 0,
+        "invalid_citations": 0,
+        "has_citation": false
+      }
+    },
+    {
+      "baseline": {
+        "id": "U8",
+        "type": "unanswerable",
+        "question": "知问 MCP 服务的默认端口是多少？",
+        "answerable": false,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\nMCP 服务当前以 stdio 方式运行，便于在本地接入 Claude、Qoder 等支持 MCP 的客户端。 [1]\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [2]\n\n- MCP 工具：search_knowledge、list_documents、get_document_chunks。 [3]\n\n2. 重叠分块：默认每块 500 字，相邻块重叠 80 字，避免上下文在边界处断裂。 [4]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 4 分块\n[2] 《知问项目技术说明.md》 · 第 1 分块\n[3] 《知问项目技术说明.md》 · 第 3 分块\n[4] 《知问项目技术说明.md》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 11,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true
+      },
+      "agent": {
+        "id": "U8",
+        "type": "unanswerable",
+        "question": "知问 MCP 服务的默认端口是多少？",
+        "answerable": false,
+        "answer": "知识库中未找到与这个问题相关的依据，因此不做推测性回答。可以换一种问法，或补充上传相关资料后再试。",
+        "source_count": 0,
+        "source_documents": [],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 78,
+        "refused": true,
+        "citations": 0,
+        "invalid_citations": 0,
+        "has_citation": false
+      }
+    },
+    {
+      "baseline": {
+        "id": "U9",
+        "type": "unanswerable",
+        "question": "知问支持图片 OCR 识别吗？",
+        "answerable": false,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [1]\n\nMCP 服务当前以 stdio 方式运行，便于在本地接入 Claude、Qoder 等支持 MCP 的客户端。 [3]\n\n手表整机重量约 32 克，提供曜石黑、雾银灰和苔藓绿三种配色，表带采用亲肤硅胶材质，支持快速拆卸。 [2]\n\n心率与血氧监测：采用 PPG 光学传感器，支持全天候自动监测，也可在 App 中发起单次测量。 [2]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《智能健康手表产品手册.docx》 · 第 1 分块\n[3] 《知问项目技术说明.md》 · 第 4 分块\n[4] 《智能健康手表产品手册.docx》 · 第 2 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 4,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 9,
+        "refused": false,
+        "citations": 8,
+        "invalid_citations": 0,
+        "has_citation": true
+      },
+      "agent": {
+        "id": "U9",
+        "type": "unanswerable",
+        "question": "知问支持图片 OCR 识别吗？",
+        "answerable": false,
+        "answer": "知识库中未找到与这个问题相关的依据，因此不做推测性回答。可以换一种问法，或补充上传相关资料后再试。",
+        "source_count": 0,
+        "source_documents": [],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 81,
+        "refused": true,
+        "citations": 0,
+        "invalid_citations": 0,
+        "has_citation": false
+      }
+    },
+    {
+      "baseline": {
+        "id": "U10",
+        "type": "unanswerable",
+        "question": "知问后台最多支持多少并发任务？",
+        "answerable": false,
+        "answer": "> **本地演示模式** · 规则规划 · 未调用大模型\n> 以下内容由 Agent 工具检索结果直接整理。\n\n根据知识库检索结果：\n\n多用户部署应迁移到 PostgreSQL，并为上传、解析、向量化引入任务队列。 [2]\n\n知问是一个面向个人与小团队的本地知识库问答系统。 [1]\n\nMCP 服务当前以 stdio 方式运行，便于在本地接入 Claude、Qoder 等支持 MCP 的客户端。 [2]\n\n手表整机重量约 32 克，提供曜石黑、雾银灰和苔藓绿三种配色，表带采用亲肤硅胶材质，支持快速拆卸。 [3]\n\n**参考资料**\n\n[1] 《知问项目技术说明.md》 · 第 1 分块\n[2] 《知问项目技术说明.md》 · 第 4 分块\n[3] 《智能健康手表产品手册.docx》 · 第 1 分块\n\n在 `backend/.env` 配置 `DEEPSEEK_API_KEY`（并确保未设置 `LLM_MODE=demo`）后，回答将由 DeepSeek 实时生成。",
+        "source_count": 3,
+        "source_documents": [
+          "智能健康手表产品手册.docx",
+          "知问项目技术说明.md"
+        ],
+        "steps": 1,
+        "tool_steps": 1,
+        "latency_ms": 6,
+        "refused": false,
+        "citations": 7,
+        "invalid_citations": 0,
+        "has_citation": true
+      },
+      "agent": {
+        "id": "U10",
+        "type": "unanswerable",
+        "question": "知问后台最多支持多少并发任务？",
+        "answerable": false,
+        "answer": "知识库中未找到与这个问题相关的依据，因此不做推测性回答。可以换一种问法，或补充上传相关资料后再试。",
+        "source_count": 0,
+        "source_documents": [],
+        "steps": 3,
+        "tool_steps": 1,
+        "latency_ms": 84,
+        "refused": true,
+        "citations": 0,
+        "invalid_citations": 0,
+        "has_citation": false
+      }
+    }
+  ]
+}

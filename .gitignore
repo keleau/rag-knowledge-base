@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.backend.log
+
+# Runtime data & secrets
+backend/data/
+backend/.env
+
+# Frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# UI design process artifacts
+.oil-ui/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
