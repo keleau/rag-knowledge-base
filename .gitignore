@@ -18,6 +18,7 @@ frontend/.vite/
 .oil-ui/
 
 # Editors / OS
+.claude/
 .vscode/
 .idea/
 .DS_Store

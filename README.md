@@ -4,6 +4,8 @@
 
 原有「检索 Agent 知识库问答」保留为底层能力：文档检索、工具调用、引用校验和 SSE 轨迹仍然可用，也是评估模块的检索与评测基础。
 
+**仓库：** [Gitee](https://gitee.com/keleau/rag-knowledge-base) · [GitHub 镜像](https://github.com/keleau/rag-knowledge-base)
+
 ![答辩作战室](shots/war-room-desktop.png)
 
 | 移动端作战室 |
